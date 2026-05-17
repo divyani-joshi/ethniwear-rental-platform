@@ -1,6 +1,7 @@
 import axios from "axios"
 import { getHeaders } from "../auth/authService"
-const BASE = "http://localhost:8000"
+const BASE = import.meta.env.VITE_API_URL
+// const BASE = "http://localhost:8000"
 export const login = (d) => axios.post(`${BASE}/login`, d)
 export const signup = (d) => axios.post(`${BASE}/signup`, d)
 export const changePassword = (d) => axios.post(`${BASE}/changePassword`, d)
