@@ -80,10 +80,12 @@ app.use(cors({
   allowedHeaders: ["Content-Type", "Authorization"]
 }));
 
+const path = require("path");
+
 app.use(
   "/uploads",
   express.static(path.join(__dirname, "uploads"))
-)
+);
 
 
 // ── Static File Serving ───────────────────────────────────────────────────────
