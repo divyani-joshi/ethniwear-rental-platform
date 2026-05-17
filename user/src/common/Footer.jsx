@@ -38,7 +38,7 @@ export default function Footer() {
           </div>
           <div className="col-lg-4 col-md-4">
             <h6 style={{ color: "#fff", fontWeight: 700, marginBottom: 16, textTransform: "uppercase", fontSize: 12, letterSpacing: 1.5 }}>Contact</h6>
-            {[{i:"bi-geo-alt",t:"Navrangpura, Ahmedabad, Gujarat"},{i:"bi-telephone",t:"+91 12345 67890"},{i:"bi-envelope",t:"info@ethniwear.in"},{i:"bi-clock",t:"Mon–Sat: 10:00 AM – 8:00 PM"}].map((c,i)=>(
+            {[{i:"bi-geo-alt",t:"Chandkheda, Ahmedabad, Gujarat"},{i:"bi-telephone",t:"+91 8320332732"},{i:"bi-envelope",t:"divyanijoshi23@gmail.com"},{i:"bi-clock",t:"Mon–Sat: 10:00 AM – 8:00 PM"}].map((c,i)=>(
               <div key={i} style={{ display: "flex", gap: 10, marginBottom: 10 }}>
                 <i className={`bi ${c.i}`} style={{ color: "var(--primary-color)", marginTop: 2, flexShrink: 0 }} />
                 <span style={{ color: "#595959", fontSize: 14 }}>{c.t}</span>
@@ -49,7 +49,7 @@ export default function Footer() {
         <hr style={{ borderColor: "rgba(255,255,255,.08)" }} />
         <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 12, paddingTop: 20 }}>
           <p style={{ color: "#595959", fontSize: 13, margin: 0 }}>© {new Date().getFullYear()} <strong style={{ color: "var(--primary-color)" }}>EthniWear</strong>. All rights reserved.</p>
-          <p style={{ color: "#595959", fontSize: 13, margin: 0 }}>Powered by <strong style={{ color: "var(--primary-color)" }}>Razorpay</strong> Secure Payments</p>
+          <p style={{ color: "#595959", fontSize: 13, margin: 0 }}>Designed & Developed by <strong style={{ color: "var(--primary-color)" }}>Divyani Joshi</strong></p>
         </div>
       </div>
     </footer>
