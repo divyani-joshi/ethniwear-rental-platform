@@ -8,7 +8,6 @@ async function GetUserOrders(req, res) {
 
     console.log("REQ USER =>", req.user);
 
-    // Get current logged-in user orders
   const orders = await db
   .collection("rental_orders")
   .aggregate([

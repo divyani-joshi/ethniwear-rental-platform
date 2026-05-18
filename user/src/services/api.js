@@ -18,16 +18,5 @@ export const cancelOrder = (d) => axios.post(`${BASE}/user/cancelOrder`, d, { he
 export const genOrderId = (d) => axios.post(`${BASE}/user/genOrderId`, d, { headers: getHeaders() })
 export const verifyPayment = (d) => axios.post(`${BASE}/user/verifyPayment`, d, { headers: getHeaders() })
 export const addFeedback = (d) => axios.post(`${BASE}/user/addFeedback`, d, { headers: getHeaders() })
-export const generatePenaltyOrder = (d) =>
-  axios.post(
-    `${BASE}/user/generatePenaltyOrder`,
-    d,
-    { headers: getHeaders() }
-  )
-
-export const verifyPenaltyPayment = (d) =>
-  axios.post(
-    `${BASE}/user/verifyPenaltyPayment`,
-    d,
-    { headers: getHeaders() }
-  )
+export const generatePenaltyOrder = (d) =>(`${BASE}/user/generatePenaltyOrder`,d,{ headers: getHeaders() })
+export const verifyPenaltyPayment = (d) => axios.post(`${BASE}/user/verifyPenaltyPayment`,d,{ headers: getHeaders() })

@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { toast } from "react-toastify"
 import { getProfile, updateProfile, changePassword } from "../services/api"
-const BACKEND = "http://localhost:8000"
+const BASE = import.meta.env.VITE_API_URL
+// const BACKEND = "http://localhost:8000"
 export default function Profile({ userData, setUserData }) {
   const [profile, setProfile] = useState(null)
   const [loading, setLoading] = useState(true)

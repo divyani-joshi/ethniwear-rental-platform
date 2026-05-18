@@ -31,7 +31,7 @@ async function GetItemDetails(req, res) {
       return res.status(404).json({ success: false, message: "Item not found" });
     }
 
-    // Get inventory with size details
+   
     const inventory = await db
       .collection("inventory")
       .aggregate([

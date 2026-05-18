@@ -1,5 +1,6 @@
 import axios from "axios"
-const BASE = "http://localhost:8000"
+const BASE = import.meta.env.VITE_API_URL
+// const BASE = "http://localhost:8000"
 export const getToken = () => localStorage.getItem("ew_user_token")
 export const setToken = (t) => localStorage.setItem("ew_user_token", t)
 export const removeToken = () => localStorage.removeItem("ew_user_token")

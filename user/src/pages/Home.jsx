@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { getCategories, getItems, getFeedbacks } from "../services/api"
 
-const BACKEND = "http://localhost:8000"
+const BACKEND = import.meta.env.VITE_API_URL;
+// const BACKEND = "http://localhost:8000"
 
 const Loader = () => (
   <div style={{ textAlign: "center", padding: "60px 0" }}>

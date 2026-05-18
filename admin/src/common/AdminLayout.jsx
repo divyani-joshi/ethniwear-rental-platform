@@ -1,8 +1,12 @@
-import React from "react"
-import Sidebar from "./Sidebar"
-import Navbar from "./Navbar"
-import Footer from "./Footer"
-export default function AdminLayout({ children, setIsAuthenticated, adminName }) {
+import React from "react";
+import Sidebar from "./Sidebar";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+export default function AdminLayout({
+  children,
+  setIsAuthenticated,
+  adminName,
+}) {
   return (
     <>
       <Sidebar />
@@ -14,5 +18,5 @@ export default function AdminLayout({ children, setIsAuthenticated, adminName })
         </div>
       </main>
     </>
-  )
+  );
 }

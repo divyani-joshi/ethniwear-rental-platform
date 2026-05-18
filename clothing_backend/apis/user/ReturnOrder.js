@@ -22,7 +22,7 @@ async function ReturnOrder(req, res) {
 
     }
 
-    // already requested
+   
     if (order.status === "Return Requested") {
 
       return res.status(400).json({
@@ -32,7 +32,6 @@ async function ReturnOrder(req, res) {
 
     }
 
-    // already returned
     if (order.status === "Returned") {
 
       return res.status(400).json({
@@ -42,7 +41,6 @@ async function ReturnOrder(req, res) {
 
     }
 
-    // update status
     await db.collection("rental_orders").updateOne(
       {
         _id: new ObjectId(id)

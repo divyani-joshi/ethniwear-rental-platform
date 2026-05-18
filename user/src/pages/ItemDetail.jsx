@@ -3,7 +3,8 @@ import { useParams, Link, useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
 import { getItemDetails, placeOrder, myOrders, genOrderId, verifyPayment } from "../services/api"
 
-const BACKEND = "http://localhost:8000"
+// const BACKEND = "http://localhost:8000"
+const BACKEND = import.meta.env.VITE_API_URL;
 const RAZORPAY_KEY = "rzp_test_VQhEfe2NCXbbwI"
 
 export default function ItemDetail({ isAuthenticated }) {

@@ -2,7 +2,8 @@ import React, { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
 import axios from "axios"
-const B = "http://localhost:8000"
+const B = import.meta.env.VITE_API_URL
+// const B = "http://localhost:8000"
 const inp = { width: "100%", padding: "12px 16px", background: "rgba(255,255,255,.04)", border: "1px solid rgba(255,255,255,.1)", borderRadius: 8, color: "#fff", fontSize: 14, outline: "none" }
 export default function ForgotPassword() {
   const [step, setStep] = useState(1)

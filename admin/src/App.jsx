@@ -46,14 +46,7 @@ export default function App() {
         <Route path="/manage-users" element={isAuthenticated ? <ManageUsers {...props} /> : <Navigate to="/login" />} />
         <Route path="/manage-payments" element={isAuthenticated ? <ManagePayments {...props} /> : <Navigate to="/login" />} />
         <Route path="/manage-feedbacks" element={isAuthenticated ? <ManageFeedbacks {...props} /> : <Navigate to="/login" />} />
-        <Route
-  path="/manage-contacts"
-  element={
-    isAuthenticated
-      ? <ManageContacts {...props} />
-      : <Navigate to="/login" />
-  }
-/>
+        <Route path="/manage-contacts"element={isAuthenticated? <ManageContacts {...props} />: <Navigate to="/login" />}/>
         <Route path="/profile" element={isAuthenticated ? <AdminProfile {...props} /> : <Navigate to="/login" />} />
         <Route path="*" element={<Navigate to={isAuthenticated ? "/" : "/login"} />} />
       </Routes>
