@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { getFeedbacks } from "../services/api";
 import { getToken } from "../auth/authService";
-const BASE = import.meta.env.VITE_API_URL;
+const BASE = "https://divyani-ethniwear-api.onrender.com"
 export default function Feedbacks() {
   const navigate = useNavigate();
 
