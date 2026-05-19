@@ -34,33 +34,36 @@ export default function Feedbacks() {
 
   // Get user orders
   const fetchOrders = async () => {
-    try {
-      let token = getToken();
+  try {
+    const token = getToken();
 
-      console.log("TOKEN =>", token);
-
-      console.log("TOKEN =>", token);
-
-      const response = await axios.get(
-        `${BASE}/user/getUserOrders`,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        },
-      );
-
-      console.log("FULL RESPONSE =>", response);
-
-      console.log("RESPONSE DATA =>", response.data);
-
-      console.log("ORDERS ARRAY =>", response.data.orders);
-
-      setOrders(response.data.orders);
-    } catch (error) {
-      console.log("FETCH ORDER ERROR =>", error);
+    if (!token) {
+      console.log("No token found");
+      return;
     }
-  };
+
+    console.log("TOKEN =>", token);
+
+    const response = await axios.get(
+      `${BASE}/user/getUserOrders`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+
+    console.log("FULL RESPONSE =>", response.data);
+
+    setOrders(response?.data?.orders || []);
+
+  } catch (error) {
+    console.log(
+      "FETCH ORDER ERROR =>",
+      error?.response?.data || error.message
+    );
+  }
+};
 
   // Submit feedback
   const handleSubmit = async (e) => {
