@@ -10,7 +10,7 @@ async function GetUserOrders(req, res) {
     if (!req.user || !req.user._id) {
       return res.status(401).json({
         success: false,
-        message: "Unauthorized",
+        message: "Unauthorized user",
       });
     }
 
