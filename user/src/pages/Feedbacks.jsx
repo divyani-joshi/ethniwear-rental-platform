@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { getFeedbacks } from "../services/api";
 import { getToken } from "../auth/authService";
+const BASE = import.meta.env.VITE_API_URL;
 export default function Feedbacks() {
   const navigate = useNavigate();
 
@@ -41,7 +42,7 @@ export default function Feedbacks() {
       console.log("TOKEN =>", token);
 
       const response = await axios.get(
-        "http://localhost:8000/user/getUserOrders",
+        "await axios.get(`${BASE}/user/getUserOrders`",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -81,7 +82,7 @@ export default function Feedbacks() {
       const token = getToken();
 
       const response = await axios.post(
-        "http://localhost:8000/user/addFeedback",
+        "await axios.post(`${BASE}/user/addFeedback`",
         formData,
         {
           headers: {

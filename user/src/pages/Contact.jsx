@@ -175,12 +175,12 @@ export default function Contact() {
                 {
                   i:"bi-telephone",
                   t:"Phone",
-                  v:"+91 12345 67890"
+                  v:"+91 8320332732"
                 },
                 {
                   i:"bi-envelope",
                   t:"Email",
-                  v:"info@ethniwear.in"
+                  v:"divyanijoshi577@gmail.com"
                 },
                 {
                   i:"bi-clock",
