@@ -42,7 +42,7 @@ export default function Feedbacks() {
       console.log("TOKEN =>", token);
 
       const response = await axios.get(
-        "await axios.get(`${BASE}/user/getUserOrders`",
+        `${BASE}/user/getUserOrders`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -82,7 +82,7 @@ export default function Feedbacks() {
       const token = getToken();
 
       const response = await axios.post(
-        "await axios.post(`${BASE}/user/addFeedback`",
+        `${BASE}/user/addFeedback`,
         formData,
         {
           headers: {
