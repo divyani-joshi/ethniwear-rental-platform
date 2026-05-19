@@ -399,25 +399,25 @@ export default function Collections() {
                       >
                         {item.image ? (
                           <img
-                            src={`${BACKEND}/${item.image}`}
-                            loading="lazy"
-                            alt={item.name}
-                            style={{
-                              width: "100%",
-                              height: "100%",
-                              objectFit: "cover",
-                              transition: "transform .4s",
-                            }}
-                            onMouseEnter={(e) =>
-                              (e.target.style.transform = "scale(1.06)")
-                            }
-                            onMouseLeave={(e) =>
-                              (e.target.style.transform = "scale(1)")
-                            }
-                            onError={(e) => {
-                              e.target.style.display = "none";
-                            }}
-                          />
+  src={`${BACKEND}/${item.image.replace(/^\/+/, "")}`}
+  loading="lazy"
+  alt={item.name}
+  style={{
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+    transition: "transform .4s",
+  }}
+  onMouseEnter={(e) =>
+    (e.target.style.transform = "scale(1.06)")
+  }
+  onMouseLeave={(e) =>
+    (e.target.style.transform = "scale(1)")
+  }
+  onError={(e) => {
+    e.target.style.display = "none";
+  }}
+/>
                         ) : (
                           <div
                             style={{
