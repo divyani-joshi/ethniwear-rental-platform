@@ -3,7 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { getFeedbacks } from "../services/api";
 import { getToken } from "../auth/authService";
-const BASE = "https://divyani-ethniwear-api.onrender.com"
+const backendUrl = "https://divyani-ethniwear-api.onrender.com"
+const BASE = import.meta.env.VITE_API_URL;
 export default function Feedbacks() {
   const navigate = useNavigate();
 
@@ -34,36 +35,33 @@ export default function Feedbacks() {
 
   // Get user orders
   const fetchOrders = async () => {
-  try {
-    const token = getToken();
+    try {
+      let token = getToken();
 
-    if (!token) {
-      console.log("No token found");
-      return;
-    }
+      console.log("TOKEN =>", token);
 
-    console.log("TOKEN =>", token);
+      console.log("TOKEN =>", token);
 
     const response = await axios.get(
-      `${BASE}/user/getUserOrders`,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
-
-    console.log("FULL RESPONSE =>", response.data);
-
-    setOrders(response?.data?.orders || []);
-
-  } catch (error) {
-    console.log(
-      "FETCH ORDER ERROR =>",
-      error?.response?.data || error.message
-    );
+  `${backendUrl}/user/getUserOrders`,
+  {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
   }
-};
+);
+
+      console.log("FULL RESPONSE =>", response);
+
+      console.log("RESPONSE DATA =>", response.data);
+
+      console.log("ORDERS ARRAY =>", response.data.orders);
+
+      setOrders(response.data.orders);
+    } catch (error) {
+      console.log("FETCH ORDER ERROR =>", error);
+    }
+  };
 
   // Submit feedback
   const handleSubmit = async (e) => {

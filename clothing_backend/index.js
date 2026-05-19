@@ -127,7 +127,7 @@ app.post("/user/verifyPayment", authMiddleware, VerifyPayment);
 app.post("/user/addFeedback", authMiddleware, AddFeedback);
 app.post("/user/requestReturn", authMiddleware, RequestReturn);
 app.put("/user/return-order/:id", authMiddleware, ReturnOrder);
-app.get( "/user/getUserOrders",  GetUserOrders)
+app.get("/user/getUserOrders", authMiddleware, GetUserOrders)
 app.post("/contact", AddContact)
 app.get("/contacts", GetContacts)
 app.post("/user/generatePenaltyOrder", authMiddleware, GeneratePenaltyOrder);
